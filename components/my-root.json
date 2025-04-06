@@ -1,0 +1,24 @@
+{
+  "name": "my-root",
+  "description": "My Root Component",
+  "attributes": {
+    "title": {
+      "observe-change": {
+        "description": "Title of the component",
+        "values": {
+          "Web": "",
+          "Web Page": ""
+        }
+      }
+    },
+    "variant": {
+      "ignore-change": {
+        "description": "Title of the component",
+        "values": {
+          "static": "Static variant",
+          "dynamic": "Dynamic variant"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "version": 1.1,
+  "tags": [
+    {
+      "name": "my-root",
+      "attributes": [
+        {
+          "name": "data-title",
+          "description": "Attribute description",
+          "valueSet": "sh-root"
+        }
+      ]
+    }
+  ],
+  "globalAttributes": [],
+  "valueSets": [
+    {
+      "name": "sh-root",
+      "values": [
+        {
+          "name": "x.val",
+          "description": "Value should point to button"
+        }
+      ]
+    }
+  ]
+}

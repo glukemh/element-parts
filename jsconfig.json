@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "module": "ESNext",
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable",
+      "DOM.AsyncIterable"
+    ],
+    "resolveJsonModule": true,
+    "moduleResolution": "bundler",
+    "strictNullChecks": true,
+    "target": "ESNext"
+  },
+  "include": [
+    "./**/*.js",
+    "./**/*.json"
+  ]
+}
