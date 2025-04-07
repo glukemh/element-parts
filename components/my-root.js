@@ -1,7 +1,7 @@
 /** @import {ElementCallbackConfig} from "../lib/sh.js" */
 import { define } from '../lib/sh.js';
 import { attributeRecord } from '../lib/element-config.js';
-import config from './my-root.json' with { type: 'json' };
+import config from './my-root.def.json' with { type: 'json' };
 
 /** @satisfies {ElementCallbackConfig} */
 const dataConfig = /** @type {const} */({

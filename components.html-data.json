@@ -5,7 +5,7 @@
       "name": "my-root",
       "attributes": [
         {
-          "name": "data-title",
+          "name": "data-title-el",
           "description": "Attribute description",
           "valueSet": "sh-root"
         }
