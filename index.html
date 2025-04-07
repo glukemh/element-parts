@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Web Page</title>
 <!-- <link rel="stylesheet" href="styles.css"> -->
-<script src="/lib/sh.js"></script>
+<script src="/lib/sh.js" type="module"></script>
 <style>
   :root {
     color-scheme: dark;
@@ -13,8 +13,11 @@
 <sh-def prefix="/components/" tags="my-root" suffix=".js"></sh-def>
 <main>
   <h1>
-    <my-root data-title="x.val" title-part="title">
-      My <span sh-="title"></span> Page
+    <my-root title="hey" data-title-el="title1 title2" data-random-number>
+      Title 1: <span sh-part="title1"></span><br>
+      Title 2: <span sh-part="title2"></span><br>
+      Title 3: <span sh-part="title3 title2">No Title 3</span><br>
+      <p>Random number is <span sh-part="randomNumber"></span></p>
     </my-root>
     Web
   </h1>
