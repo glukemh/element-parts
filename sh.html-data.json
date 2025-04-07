@@ -23,12 +23,7 @@
   "valueSets": [
     {
       "name": "sh-root",
-      "values": [
-        {
-          "name": "x.val",
-          "description": "x value"
-        }
-      ]
+      "values": []
     }
   ]
 }

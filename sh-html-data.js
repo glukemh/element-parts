@@ -1,4 +1,4 @@
-/** @import { ElementConfig, AttributesConfig } from "./lib/element-config.js" */
+/** @import { ShDataConfig, ShDataAttributes } from "./lib/sh.js" */
 import fs from 'fs/promises';
 import path from 'path';
 
@@ -22,7 +22,7 @@ async function readDefinitionFiles() {
         const content = await fs.readFile(filePath, 'utf8');
         return {
           name: path.basename(file, '.def.json'),
-          data: /** @type {ElementConfig<AttributesConfig>} */(JSON.parse(content))
+          data: /** @type {ShDataConfig<ShDataAttributes>} */(JSON.parse(content))
         };
       })
     );
@@ -43,13 +43,9 @@ readDefinitionFiles()
       tags: definitions.map(({ data }) => ({
         name: data.name,
         description: data.description,
-        attributes: Object.entries(data.attributes).map(([name, config]) => ({
-          name,
-          description: Object.values(config)[0].description,
-          values: Object.entries(Object.values(config)[0].values).map(([name, description]) => ({
-            name,
-            description
-          }))
+        attributes: Object.entries(data['sh-data-attributes']).map(([name, config]) => ({
+          name: 'data-' + name,
+          description: `${config.description}\nExpected Elements: ${config.expect ? Object.keys(config.expect).join(', ') : 'any element'}`
         }))
       }))
     };
@@ -65,7 +61,7 @@ readDefinitionFiles()
     }
 
     // Write the HTML data to a file
-    const outputPath = path.join(htmlDataDir, 'generated-component.html-data.json');
+    const outputPath = path.join(htmlDataDir, 'sh-data.html-data.json');
 
     await fs.writeFile(outputPath, JSON.stringify(htmlData, null, 2), 'utf8');
     console.log('HTML data written to:', outputPath);

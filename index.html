@@ -16,9 +16,9 @@
     <sh-root>
       <slot name="heading"></slot>
     </sh-root>
-    <my-root slot="heading" title="hey" data-title-el="title1 title2" data-random-number>
-      Title 1: <span sh-part="title1"></span><br>
-      Title 2: <span sh-part="title2"></span><br>
+    <my-root slot="heading" title-text="Web Page" data-title-el data-random-number>
+      Title 1: <span sh-part="titleEl"></span><br>
+      Title 2: <span sh-part="title2 titleEl"></span><br>
       Title 3: <span sh-part="title3 title2">No Title 3</span><br>
       <p>Random number is <span sh-part="randomNumber"></span></p>
       <div>

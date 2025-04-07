@@ -2,7 +2,7 @@
   "name": "my-root",
   "description": "My Root Component",
   "attributes": {
-    "title": {
+    "title-text": {
       "observe-change": {
         "description": "Title of the component",
         "values": {
@@ -11,13 +11,33 @@
         }
       }
     },
-    "variant": {
+    "style-variant": {
       "ignore-change": {
         "description": "Title of the component",
         "values": {
           "static": "Static variant",
           "dynamic": "Dynamic variant"
         }
+      }
+    }
+  },
+  "sh-data-attributes": {
+    "title-el": {
+      "description": "Element to render title-text",
+      "expect": {
+        "h1": "",
+        "h2": "",
+        "h3": "",
+        "h4": "",
+        "h5": "",
+        "h6": "",
+        "span": ""
+      }
+    },
+    "random-number": {
+      "description": "Random number to be used in the component",
+      "expect": {
+        "span": ""
       }
     }
   }
