@@ -19,7 +19,12 @@
       ]
     }
   ],
-  "globalAttributes": [],
+  "globalAttributes": [
+    {
+      "name": "sh-part",
+      "description": "Space separated list of parts to bind to."
+    }
+  ],
   "valueSets": [
     {
       "name": "sh-root",
