@@ -4,32 +4,23 @@
 <title>My Web Page</title>
 <!-- <link rel="stylesheet" href="styles.css"> -->
 <script src="/lib/sh.js" type="module"></script>
+<script src="/components/my-root.js" type="module"></script>
 <style>
   :root {
     color-scheme: dark;
   }
 </style>
 
-<sh-def prefix="/components/" tags="my-root" suffix=".js"></sh-def>
 <main>
   <h1>
     <sh-root>
       <slot name="heading"></slot>
     </sh-root>
-    <my-root slot="heading" title-text="Web Page" data-title-el data-random-number>
-      Title 1: <span sh-part="titleEl"></span><br>
-      Title 2: <span sh-part="title2 titleEl"></span><br>
-      Title 3: <span sh-part="title3 title2">No Title 3</span><br>
-      <p>Random number is <span sh-part="randomNumber"></span></p>
-      <div>
-        <sh-root>
-          <my-root data-random-number="r">
-            <p>Random number is <span sh-part="r"></span></p>
-          </my-root>
-        </sh-root>
-      </div>
+    <my-root slot="heading" title-text="Web Page" data-title-el="t" data-random-number="r">
+      Title 1: <span sh-part="t"></span><br>
+      Title 2: <span sh-part="t"></span><br>
+      Title 3: <span sh-part="t">No Title 3</span><br>
+      <p>Random number is <span sh-part="r"></span></p>
     </my-root>
-    Web
   </h1>
-  hello
 </main>
