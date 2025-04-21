@@ -1,4 +1,4 @@
-/** @import { PartsDataConfig, PartDataAttributes } from "./lib/sh.js" */
+/** @import { PartsDataConfig, PartDataAttributes } from "./lib/element-parts" */
 import fs from 'fs/promises';
 import path from 'path';
 

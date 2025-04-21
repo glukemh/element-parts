@@ -1,4 +1,4 @@
-import { elementConfig, partsDataRecord } from '../lib/sh.js';
+import { elementConfig, partsDataRecord } from '../lib/element-parts.js';
 import { attributeRecord } from '../lib/element-config.js';
 import config from './my-root.def.json' with { type: 'json' };
 
