@@ -61,7 +61,7 @@ readDefinitionFiles()
     }
 
     // Write the HTML data to a file
-    const outputPath = path.join(htmlDataDir, 'sh-data.html-data.json');
+    const outputPath = path.join(htmlDataDir, 'part-elements.html-data.json');
 
     await fs.writeFile(outputPath, JSON.stringify(htmlData, null, 2), 'utf8');
     console.log('HTML data written to:', outputPath);

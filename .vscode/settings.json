@@ -1,7 +1,7 @@
 {
   "html.customData": [
     "./.html-data/generated-component.html-data.json",
-    "./.html-data/sh-data.html-data.json",
-    "./sh.html-data.json"
+    "./.html-data/part-elements.html-data.json",
+    "./element-parts.html-data.json"
   ]
 }
