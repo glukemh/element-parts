@@ -2,19 +2,19 @@
   "version": 1.1,
   "tags": [
     {
-      "name": "sh-root",
+      "name": "part-root",
       "attributes": []
     }
   ],
   "globalAttributes": [
     {
-      "name": "sh-part",
+      "name": "part-of",
       "description": "Space separated list of parts to bind to."
     }
   ],
   "valueSets": [
     {
-      "name": "sh-root",
+      "name": "part-root",
       "values": []
     }
   ]

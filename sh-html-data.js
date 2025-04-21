@@ -1,4 +1,4 @@
-/** @import { ShDataConfig, ShDataAttributes } from "./lib/sh.js" */
+/** @import { PartsDataConfig, PartDataAttributes } from "./lib/sh.js" */
 import fs from 'fs/promises';
 import path from 'path';
 
@@ -22,7 +22,7 @@ async function readDefinitionFiles() {
         const content = await fs.readFile(filePath, 'utf8');
         return {
           name: path.basename(file, '.def.json'),
-          data: /** @type {ShDataConfig<ShDataAttributes>} */(JSON.parse(content))
+          data: /** @type {PartsDataConfig<PartDataAttributes>} */(JSON.parse(content))
         };
       })
     );
@@ -43,7 +43,7 @@ readDefinitionFiles()
       tags: definitions.map(({ data }) => ({
         name: data.name,
         description: data.description,
-        attributes: Object.entries(data['sh-data-attributes']).map(([name, config]) => ({
+        attributes: Object.entries(data['part-data-attributes']).map(([name, config]) => ({
           name: 'data-' + name,
           description: `${config.description}\nExpected Elements: ${config.expect ? Object.keys(config.expect).join(', ') : 'any element'}`
         }))

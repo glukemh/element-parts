@@ -1,29 +1,25 @@
-/** @import {ElementCallbackConfig} from "../lib/sh.js" */
-import { define, shDataRecord } from '../lib/sh.js';
+import { elementConfig, partsDataRecord } from '../lib/sh.js';
 import { attributeRecord } from '../lib/element-config.js';
 import config from './my-root.def.json' with { type: 'json' };
 
-class MyRoot extends define().shDataConfig(shDataRecord(config)).attributes(attributeRecord(config)).tag(config.name).class() {
+export default class MyRoot extends elementConfig({ attributes: attributeRecord(config), elementCallbackConfig: partsDataRecord(config) }) {
   static {
     this.lifecycleCallbacks({
       connectedCallback() {
-        console.debug(`Connected ${MyRoot.tag}`);
-        this.hydrate();
+        const { titleEl, randomNumber } = this.elementParts();
+        titleEl.forEach(el => {
+          el.textContent = this.attrValue('title-text') ?? this.defaultTitle;
+        });
+        randomNumber.forEach(el => {
+          el.textContent = (Math.random() * 100).toFixed(2);
+        });
+        this.disconnectSignal.addEventListener('abort', () => {
+          console.debug(`Disconnected ${this.tagName}`);
+        });
       },
-      attributeChangedCallback(name, oldValue, newValue) {
-        if (name === 'title-text') {
-          if (newValue === 'Web Page') {
-          }
-        }
-      }
-    }).shDataCallbacks({
-      titleEl(el) {
-        el.textContent = this.attrValue('title-text') ?? 'Default Title';
-      },
-      randomNumber(el) {
-        el.textContent = (Math.random() * 100).toFixed(2);
-      }
     });
-    this.register();
+    this.register(config.name);
   }
+
+  defaultTitle = 'Default Title';
 }

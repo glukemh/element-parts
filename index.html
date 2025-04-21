@@ -13,14 +13,14 @@
 
 <main>
   <h1>
-    <sh-root>
+    <part-root>
       <slot name="heading"></slot>
-    </sh-root>
+    </part-root>
     <my-root slot="heading" title-text="Web Page" data-title-el="t" data-random-number="r">
-      Title 1: <span sh-part="t"></span><br>
-      Title 2: <span sh-part="t"></span><br>
-      Title 3: <span sh-part="t">No Title 3</span><br>
-      <p>Random number is <span sh-part="r"></span></p>
+      Title 1: <span part-of="t"></span><br>
+      Title 2: <span part-of="t"></span><br>
+      Title 3: <span part-of="t">No Title 3</span><br>
+      <p>Random number is <span part-of="r"></span></p>
     </my-root>
   </h1>
 </main>
